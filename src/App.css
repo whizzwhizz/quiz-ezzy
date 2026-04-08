@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+.quiz-card { /* Use your actual class name here */
+  background: rgba(18, 18, 18, 0.85);
+  border: 1px solid #b300ff; /* Your neon purple border */
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 800px; /* Prevents the card from stretching too wide */
+  
+  /* THE FIX: This centers the card and pushes it down from the navbar */
+  margin: 60px auto; 
+  
+  box-shadow: 0 0 20px rgba(179, 0, 255, 0.3);
+}
+.arena-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.glass-card {
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+}
+.quiz-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+}
+.app-container {
+  min-height: 100vh;
+  /* Ensure the image is in src/assets/images/retro-bg.jpg */
+  background-image: url('./retro-bg.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: panBackground 30s linear infinite alternate;
+  padding-top: 80px; /* Space for the fixed navbar */
+}
+
+@keyframes panBackground {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #121212; 
+  display: flex;
+  align-items: center;
+  justify-content: center; /* This perfectly centers your logo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  border-bottom: 2px solid #ff00ff; 
+}
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff; 
+  font-size: 2.5rem; /* Made it a bit larger */
+  text-transform: uppercase; /* Forces all caps (QUIZ-EZZY) */
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+
+.logo:hover {
+  transform: scale(1.1); 
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+
+
+.glass-card {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  border-radius: 15px;
+  padding: 60px 40px; 
+  max-width: 800px; 
+  width: 90%; 
+  margin: 20vh auto; 
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ff00ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+
+.neon-btn {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.neon-btn:hover {
+  background: #00ffff;
+  color: #121212;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff;
+  color: white;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.option-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: translateX(10px);
+}
+
+.timer-text {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffb703;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.category-btn {
+  flex: 1 1 200px; 
+  max-width: 220px; 
+  background: rgba(18, 18, 18, 0.8);
+  border: 2px solid #b300ff;
+  color: white;
+  padding: 15px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(179, 0, 255, 0.4);
+}
+
+.category-btn:hover {
+  background: #b300ff;
+  color: white;
+  box-shadow: 0 0 20px #b300ff, 0 0 40px #b300ff;
+  transform: translateY(-5px);
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+  transition: width 0.4s ease;
+}
+
+.hint-btn {
+  background: transparent;
+  border: 1px dashed #ffb703;
+  color: #ffb703;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.hint-btn:hover {
+  background: rgba(255, 183, 3, 0.2);
+}
+
+.hint-text {
+  color: #ffb703;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
